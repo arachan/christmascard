@@ -1,0 +1,59 @@
+= chrismas card address maker
+
+Westerner, They send chrismas card.
+It is trublesome to write address.
+
+So, I make card address maker.
+
+= Prepaired
+
+- Windows10 
+    - PowerShell (No Problem Windows10 include.)
+- LibreOffice
+- PostCard (Japanese PostCard Size 148mm*100mm)
+
+= How To use
+
+1. write address in addresslist.csv.
+2. run makecard.ps1
+3. Set on Postcard.
+4. Set Postcard Papersize on Windows Default Printer.
+5. run print.ps1
+
+= How to Make?
+
+== Template use LibreOffice Draw.
+
+1. Set Pagesize Postcard.
+    - I use Japanese Postcard.
+2. put on textbox.
+3. write {postcode} in textbox.
+4. write {address1} in textbox.
+5. write {address2} in textbox.
+6. write {name} in textbox.
+7. save as Flat Open Document Draw.
+
+== addresslist is csv file.
+
+1. write header postcode,address1,address2,name
+2. write address to send.
+3. save csv file in utf8
+
+== Make Cards
+I use Powershell.
+makecards.ps1 make cards from template and addresslist.
+
+{postcode} in template file replace addresslist's postcode.
+{address1} in template file replace addresslist's address1.
+{address2} in template file replace addresslist's address2.
+{name} in template file replace addresslist's name.
+Make many cards in cards folder.
+
+== Print
+I print to use Powershell.
+print.ps1 print all cards in cards folder.
+print to Default Printer and Default Setting.
+
+But, Don't controll printer settings.
+So, You set Default Printer to print.
+You set postcard Papersize and landscape setting in Default Printer.
